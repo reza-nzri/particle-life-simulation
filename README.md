@@ -174,6 +174,8 @@ uv run pytest --cov=particle_life_simulation --cov-report=term-missing
 
 Die automatisierten Tests überprüfen insbesondere die Kernlogik der Simulation.
 
+Weitere Informationen zu Entwicklung, Tests und Coding Conventions stehen in [CONTRIBUTING.md](CONTRIBUTING.md).
+
 </details>
 
 ## Architektur
