@@ -1,0 +1,27 @@
+# Python-Artefakte und lokale Umgebung
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+dist/
+*.egg-info/
+
+# Editor und Betriebssystem
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Build, Coverage und Tools
+build/
+.coverage.*
+coverage.xml
+.mypy_cache/
+.uv-cache/
+
+# Benchmark-Ergebnisse (lokal)
+benchmarks/results/
+*.prof
