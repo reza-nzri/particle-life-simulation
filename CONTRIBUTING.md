@@ -30,7 +30,7 @@ Die Benennung orientiert sich an [PEP 8](https://peps.python.org/pep-0008/). Nam
 ## 3. Python Coding Conventions
 
 - **PEP 8:** Einheitlicher Python-Code-Stil.
-- **Type Hints:** Parameter und Rückgabewerte typisieren.
+- **Type Hints:** Für alle Funktionen und Methoden Parameter- und Rückgabetypen angeben (PEP 484). Variablen bei Bedarf typisieren.
 - **PEP 257:** Docstrings für Funktionen, Klassen und Module verwenden.
 - **DRY:** Unnötige Code-Duplikate vermeiden.
 - **KISS:** Einfache und verständliche Lösungen bevorzugen.
