@@ -1,0 +1,19 @@
+# Force LF line endings for all text files
+* text=auto eol=lf
+
+# Python sources
+*.py    text
+*.pxd   text
+*.pyx   text
+*.pyi   text
+
+# Binary files (no line ending conversion)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+
+
+# These are explicitly windows files and should use crlf
+*.bat   text eol=crlf
+*.cmd   text eol=crlf
