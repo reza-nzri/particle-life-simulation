@@ -1,1 +1,44 @@
-# CI-Workflow (GitHub Actions): Platzhalter, wird später mit Lint und Tests befüllt.
+name: Python CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    strategy:
+      fail-fast: false
+      matrix:
+        os_python: 
+          - [ubuntu-latest, '3.14']
+          - [ubuntu-latest, '3.13']
+          # - [ubuntu-latest, '3.12']
+          # - [windows-latest, '3.12']
+          # - [macos-latest, '3.12']
+
+    runs-on: ${{ matrix.os_python[0]}}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Install uv and Python
+        uses: astral-sh/setup-uv@v10.0.0
+        with:
+          version: "0.13.9"
+          python-version: ${{ matrix.os_python[1] }}
+
+      - name: Sync project
+        run: uv sync --locked --all-extras --dev
+
+      - name: Run Ruff linter
+        run: uv run --locked ruff check .
+
+      - name: Check formatting
+        run: uv run --locked ruff format --check .
+      
+      - name: Run tests
+        run: uv run --locked pytest
